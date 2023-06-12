@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Classroom Directions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #000000;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background-color: #DC143C;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .title-floor {
+            font-size: 18px;
+            font-weight: 600;
+            background-color: lavender;
+            border-radius: 5px;
+            color: #000000;
+            text-align: center;
+        }
+
+        .select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            background-color: #ffffff;
+            color: #000000;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+        }
+
+        .direction {
+            display: none;
+            margin-top: 10px;
+            color: #ffffff;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .classroom-image {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: 640px) {
+
+            /* For screens with a minimum width of 640px */
+            .classroom-image {
+                max-width: 50%;
+                height: 50%;
+            }
+        }
+    </style>
+    <script>
+        function showDirection() {
+            var select = document.getElementById("classroom-select");
+            var selectedClassroom = select.options[select.selectedIndex].value;
+            var directions = document.getElementsByClassName("direction");
+
+            for (var i = 0; i < directions.length; i++) {
+                directions[i].style.display = "none";
+            }
+
+            if (selectedClassroom !== "") {
+                var direction = document.getElementById(selectedClassroom);
+                direction.style.display = "block";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="title-floor">Ground Floor</div>
+            <div class="title">Classroom Directions</div>
+            <select id="classroom-select" class="select" onchange="showDirection()">
+                <option value="">Select a classroom</option>
+                <option value="1A">1A</option>
+                <option value="1B">1B</option>
+                <option value="1C">1C</option>
+                <option value="1D">1D</option>
+                <option value="1E">1E</option>
+                <option value="2E">2E</option>
+                <option value="2D">2D</option>
+                <option value="KG1E">KG1 E</option>
+                <option value="KG1D">KG1 D</option>
+                <option value="KG1C">KG1 C</option>
+                <option value="KG1B">KG1 B</option>
+                <option value="KG1A">KG1 A</option>
+                <option value="KG2A">KG2 A</option>
+                <option value="KG2B">KG2 B</option>
+                <option value="KG2C">KG2 C</option>
+                <option value="KG2D">KG2 D</option>
+                <option value="KG2E">KG2 E</option>
+            </select>
+            <div id="directions-container">
+                <div id="1A" class="direction">
+                    <div>Right (Ground Floor)</div>
+                    <div>
+                        <img src="1A.png" alt="Class 1A" class="classroom-image">
+                    </div>
+                </div>
+                <div id="1B" class="direction">
+                    <div>Right (Ground Floor)</div>
+                    <div>
+                        <img src="1B.png" alt="Class 1B" class="classroom-image">
+                    </div>
+                </div>
+                <div id="1C" class="direction">
+                    <div>Right (Ground Floor)</div>
+                    <div>
+                        <img src="1C.png" alt="Class 1C" class="classroom-image">
+                    </div>
+                </div>
+                <div id="1D" class="direction">
+                    <div>Right (Ground Floor)</div>
+                    <div>
+                        <img src="1D.png" alt="Class 1D" class="classroom-image">
+                    </div>
+                </div>
+                <div id="1E" class="direction">
+                    <div>Right (Ground Floor)</div>
+                    <div>
+                        <img src="1E.png" alt="Class 1E" class="classroom-image">
+                    </div>
+                </div>
+                <div id="2E" class="direction">Right (Ground Floor)</div>
+                <div id="2D" class="direction">Right (Ground Floor)</div>
+                <div id="KG1E" class="direction">Right (Ground Floor)</div>
+                <div id="KG1D" class="direction">Right (Ground Floor)</div>
+                <div id="KG1C" class="direction">Right (Ground Floor)</div>
+                <div id="KG1B" class="direction">Right (Ground Floor)</div>
+                <div id="KG1A" class="direction">Left (Ground Floor)</div>
+                <div id="KG2A" class="direction">Left (Ground Floor)</div>
+                <div id="KG2B" class="direction">Left (Ground Floor)</div>
+                <div id="KG2C" class="direction">Left (Ground Floor)</div>
+                <div id="KG2D" class="direction">Left (Ground Floor)</div>
+                <div id="KG2E" class="direction">Left (Ground Floor)</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
